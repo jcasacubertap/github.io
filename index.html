@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jordi Casacuberta Puig — Aerospace Researcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0c10;
+      --surface: #10141a;
+      --border: rgba(255,255,255,0.07);
+      --text: #e8e4dc;
+      --muted: #7a8090;
+      --accent: #c8a96e;
+      --accent2: #5b8fa8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.4rem 3rem;
+      background: rgba(10,12,16,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 0.04em; color: var(--text); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero { position: relative; min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background-image: url('backGroundTransition.jpeg'); background-size: cover; background-position: center right; opacity: 0.18; filter: saturate(1.4); }
+    .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, var(--bg) 38%, transparent 70%); }
+    .hero-left { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center; padding: 10rem 4rem 6rem 5rem; }
+    .hero-tag { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.6rem; opacity: 0; animation: fadeUp 0.8s 0.2s forwards; }
+    .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.2rem, 5.5vw, 5.5rem); font-weight: 300; line-height: 1.0; color: var(--text); opacity: 0; animation: fadeUp 0.8s 0.35s forwards; }
+    .hero-name em { font-style: italic; color: var(--accent); }
+    .hero-divider { width: 60px; height: 1px; background: var(--accent); margin: 2rem 0; opacity: 0; animation: fadeUp 0.8s 0.5s forwards; }
+    .hero-desc { font-size: 1.05rem; line-height: 1.75; color: var(--muted); max-width: 480px; opacity: 0; animation: fadeUp 0.8s 0.65s forwards; }
+    .hero-desc strong { color: var(--text); font-weight: 400; }
+    .hero-motto { margin-top: 2.5rem; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--accent); border-left: 2px solid var(--accent); padding-left: 1.2rem; opacity: 0; animation: fadeUp 0.8s 0.8s forwards; }
+    .hero-ctas { display: flex; gap: 1rem; margin-top: 3rem; opacity: 0; animation: fadeUp 0.8s 0.95s forwards; }
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.8rem; font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.25s; cursor: pointer; }
+    .btn-primary { background: var(--accent); color: var(--bg); }
+    .btn-primary:hover { background: #d4b87e; }
+    .btn-outline { border: 1px solid var(--border); color: var(--muted); }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-right { position: relative; z-index: 2; display: flex; align-items: flex-end; justify-content: center; padding: 8rem 4rem 0; opacity: 0; animation: fadeIn 1.2s 0.5s forwards; }
+    .photo-frame { position: relative; width: 340px; }
+    .photo-frame::before { content: ''; position: absolute; top: -16px; left: -16px; right: 16px; bottom: -16px; border: 1px solid var(--accent); opacity: 0.3; pointer-events: none; }
+    .photo-frame img { width: 100%; display: block; filter: grayscale(15%) contrast(1.05); object-fit: cover; }
+    .photo-badge { position: absolute; bottom: 1.5rem; right: -1.5rem; background: var(--surface); border: 1px solid var(--border); padding: 0.8rem 1.2rem; font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); line-height: 1.7; }
+    .photo-badge span { display: block; color: var(--accent); }
+
+    section { padding: 7rem 5rem; }
+    .section-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; line-height: 1.15; margin-bottom: 3rem; }
+
+    #research { border-top: 1px solid var(--border); max-width: 1200px; margin: 0 auto; }
+    .research-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5px; background: var(--border); }
+    .research-card { background: var(--surface); padding: 2.5rem; transition: background 0.25s; }
+    .research-card:hover { background: #161b24; }
+    .research-card-num { font-family: 'DM Mono', monospace; font-size: 0.6rem; color: var(--accent); letter-spacing: 0.15em; margin-bottom: 1.2rem; }
+    .research-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; margin-bottom: 0.9rem; line-height: 1.3; }
+    .research-card p { font-size: 0.88rem; line-height: 1.75; color: var(--muted); }
+
+    .flow-strip { width: 100%; height: 320px; overflow: hidden; position: relative; }
+    .flow-strip img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; filter: saturate(1.3) brightness(0.7); }
+    .flow-strip-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, var(--bg) 0%, transparent 30%, transparent 70%, var(--bg) 100%); }
+    .flow-strip-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-family: 'Cormorant Garamond', serif; font-size: clamp(1.4rem, 3vw, 2.4rem); font-style: italic; font-weight: 300; color: var(--text); width: 80%; text-shadow: 0 2px 20px rgba(0,0,0,0.8); }
+
+    #about { border-top: 1px solid var(--border); display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: start; max-width: 1200px; margin: 0 auto; }
+    .about-text p { font-size: 1rem; line-height: 1.85; color: var(--muted); margin-bottom: 1.2rem; }
+    .about-text p strong { color: var(--text); font-weight: 400; }
+    .about-text a { color: var(--accent); }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--border); margin-top: 3rem; }
+    .stat-cell { background: var(--surface); padding: 1.5rem 2rem; }
+    .stat-cell .val { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; color: var(--accent); line-height: 1; }
+    .stat-cell .lbl { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.4rem; }
+    .about-links { display: flex; flex-direction: column; gap: 1rem; }
+    .about-link { display: flex; align-items: center; gap: 1rem; padding: 1.2rem 1.5rem; background: var(--surface); border: 1px solid var(--border); text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+    .about-link:hover { border-color: var(--accent); background: #161b24; }
+    .about-link-icon { font-size: 1.2rem; width: 2rem; text-align: center; }
+    .about-link-text { flex: 1; }
+    .about-link-text span { display: block; font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+    .about-link-text strong { display: block; font-size: 0.92rem; font-weight: 400; color: var(--text); margin-top: 0.15rem; }
+    .about-link-arrow { color: var(--accent); font-size: 0.8rem; }
+
+    #publications { border-top: 1px solid var(--border); max-width: 1200px; margin: 0 auto; }
+    .pub-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); }
+    .pub-item { background: var(--surface); padding: 2rem 2.5rem; display: grid; grid-template-columns: auto 1fr auto; gap: 2rem; align-items: center; transition: background 0.2s; }
+    .pub-item:hover { background: #161b24; }
+    .pub-year { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--accent); letter-spacing: 0.05em; min-width: 3rem; }
+    .pub-content h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 0.3rem; }
+    .pub-content p { font-size: 0.8rem; color: var(--muted); font-style: italic; }
+    .pub-link { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.4rem 0.8rem; white-space: nowrap; transition: all 0.2s; }
+    .pub-link:hover { border-color: var(--accent); color: var(--accent); }
+    .pub-more { margin-top: 2rem; text-align: center; }
+
+    #contact { border-top: 1px solid var(--border); max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
+    .contact-left .big-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 300; line-height: 1.1; margin-bottom: 1.5rem; }
+    .contact-left .big-text em { font-style: italic; color: var(--accent); }
+    .contact-left p { font-size: 0.95rem; line-height: 1.8; color: var(--muted); }
+    .contact-right { display: flex; flex-direction: column; justify-content: center; gap: 1rem; }
+    .contact-item { display: flex; align-items: center; gap: 1.2rem; padding: 1.4rem 1.6rem; border: 1px solid var(--border); text-decoration: none; transition: border-color 0.2s; }
+    .contact-item:hover { border-color: var(--accent); }
+    .contact-item-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .contact-item-val { font-size: 0.95rem; color: var(--text); margin-top: 0.2rem; }
+
+    footer { border-top: 1px solid var(--border); padding: 2.5rem 5rem; display: flex; justify-content: space-between; align-items: center; }
+    footer p { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; color: var(--muted); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    @media (max-width: 900px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 8rem 2rem 4rem; }
+      .hero-right { display: none; }
+      section { padding: 5rem 2rem; }
+      .research-grid { grid-template-columns: 1fr; }
+      #about { grid-template-columns: 1fr; gap: 3rem; }
+      #contact { grid-template-columns: 1fr; gap: 3rem; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
+      .pub-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="nav-logo">Jordi <span>Casacuberta Puig</span></a>
+    <ul class="nav-links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-left">
+      <p class="hero-tag">PhD · TU Delft · Aerospace Engineering</p>
+      <h1 class="hero-name">Jordi<br><em>Casacuberta</em><br>Puig</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-desc">
+        Researcher at the intersection of <strong>Flow Stability Theory</strong> and <strong>Computational Fluid Dynamics</strong>. Working to make aviation cleaner through laminar wing design.
+      </p>
+      <blockquote class="hero-motto">Aviation will be green, or will not be.</blockquote>
+      <div class="hero-ctas">
+        <a href="#publications" class="btn btn-primary">View Publications</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="photo-frame">
+        <img src="personal.png" alt="Jordi Casacuberta Puig" />
+        <div class="photo-badge">
+          <span>Position</span>Researcher<br>
+          <span style="margin-top:0.4rem;">Institution</span>TU Delft
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="research">
+    <p class="section-label">Focus Areas</p>
+    <h2 class="section-title">Research Interests</h2>
+    <div class="research-grid">
+      <div class="research-card">
+        <p class="research-card-num">01</p>
+        <h3>Laminar–Turbulent Transition</h3>
+        <p>Investigating the mechanisms by which laminar boundary layers break down to turbulence, with a focus on crossflow and Tollmien–Schlichting instabilities on swept wings.</p>
+      </div>
+      <div class="research-card">
+        <p class="research-card-num">02</p>
+        <h3>Passive Flow Control & Laminarization</h3>
+        <p>Designing novel wing geometries and surface treatments that delay transition and reduce skin-friction drag — a key lever for sustainable aviation.</p>
+      </div>
+      <div class="research-card">
+        <p class="research-card-num">03</p>
+        <h3>Computational Fluid Dynamics</h3>
+        <p>High-fidelity numerical simulations including Direct Numerical Simulation (DNS) and global stability analysis of the Navier–Stokes equations.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="flow-strip">
+    <img src="backGroundTransition.jpeg" alt="Laminar-turbulent transition simulation" />
+    <div class="flow-strip-overlay"></div>
+    <p class="flow-strip-text">"Using Computational Fluid Dynamics towards greener aviation"</p>
+  </div>
+
+  <section id="about">
+    <div>
+      <p class="section-label">Background</p>
+      <h2 class="section-title">About me</h2>
+      <div class="about-text">
+        <p>I hold a <strong>PhD in Aerospace Engineering</strong> from the Delft University of Technology (TU Delft, The Netherlands), where I remain as a researcher in the <a href="https://www.a2sc.lr.tudelft.nl/">Flow Control group (A2SC Lab)</a>.</p>
+        <p>My research sits at the frontier of aerodynamic efficiency — understanding how and where turbulence begins on a wing surface is essential to controlling it. Through careful stability analysis and large-scale simulations, I develop passive strategies that keep the boundary layer laminar for longer, reducing drag and fuel burn.</p>
+        <p>Beyond aerospace, my computational methods have been applied to <strong>blood-flow dynamics</strong>, illustrating the broad relevance of flow instability physics across engineering and medicine.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-cell"><div class="val">10+</div><div class="lbl">Publications</div></div>
+        <div class="stat-cell"><div class="val">5+</div><div class="lbl">Years at TU Delft</div></div>
+        <div class="stat-cell"><div class="val">3</div><div class="lbl">Research Domains</div></div>
+        <div class="stat-cell"><div class="val">∞</div><div class="lbl">Curiosity</div></div>
+      </div>
+    </div>
+    <div class="about-links">
+      <p class="section-label" style="margin-bottom:1.5rem;">Find me at</p>
+      <a href="https://www.a2sc.lr.tudelft.nl/" target="_blank" class="about-link">
+        <div class="about-link-icon">🏛</div>
+        <div class="about-link-text"><span>Research Group</span><strong>A2SC Lab — TU Delft</strong></div>
+        <span class="about-link-arrow">→</span>
+      </a>
+      <a href="#" target="_blank" class="about-link">
+        <div class="about-link-icon">🎓</div>
+        <div class="about-link-text"><span>Academic Profile</span><strong>Google Scholar</strong></div>
+        <span class="about-link-arrow">→</span>
+      </a>
+      <a href="#" target="_blank" class="about-link">
+        <div class="about-link-icon">🔬</div>
+        <div class="about-link-text"><span>Researcher ID</span><strong>ORCID Profile</strong></div>
+        <span class="about-link-arrow">→</span>
+      </a>
+      <a href="#" target="_blank" class="about-link">
+        <div class="about-link-icon">💼</div>
+        <div class="about-link-text"><span>Professional Network</span><strong>LinkedIn</strong></div>
+        <span class="about-link-arrow">→</span>
+      </a>
+      <a href="#" class="about-link">
+        <div class="about-link-icon">📄</div>
+        <div class="about-link-text"><span>Curriculum Vitae</span><strong>Download CV (PDF)</strong></div>
+        <span class="about-link-arrow">↓</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="publications">
+    <p class="section-label">Selected Works</p>
+    <h2 class="section-title">Publications</h2>
+    <div class="pub-list">
+      <div class="pub-item">
+        <span class="pub-year">2024</span>
+        <div class="pub-content">
+          <h4>Nonlinear optimal perturbations in a swept-wing boundary layer</h4>
+          <p>Journal of Fluid Mechanics · Casacuberta, J. et al.</p>
+        </div>
+        <a href="#" class="pub-link">View →</a>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2023</span>
+        <div class="pub-content">
+          <h4>Transition prediction under the influence of surface imperfections using PSE</h4>
+          <p>AIAA Journal · Casacuberta, J. et al.</p>
+        </div>
+        <a href="#" class="pub-link">View →</a>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2022</span>
+        <div class="pub-content">
+          <h4>Direct numerical simulation of crossflow instability with forward-facing steps</h4>
+          <p>Physical Review Fluids · Casacuberta, J. et al.</p>
+        </div>
+        <a href="#" class="pub-link">View →</a>
+      </div>
+      <div class="pub-item">
+        <span class="pub-year">2021</span>
+        <div class="pub-content">
+          <h4>Instability mechanisms in blood flow through a stenosed carotid artery</h4>
+          <p>Journal of Biomechanics · Casacuberta, J. et al.</p>
+        </div>
+        <a href="#" class="pub-link">View →</a>
+      </div>
+    </div>
+    <div class="pub-more">
+      <a href="#" class="btn btn-outline" style="display:inline-flex;">Full list on Google Scholar →</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-left">
+      <h2 class="big-text">Let's<br><em>connect.</em></h2>
+      <p>Whether you're interested in collaboration, have questions about my research, or want to discuss opportunities in sustainable aviation — I'm glad to hear from you.</p>
+    </div>
+    <div class="contact-right">
+      <a href="mailto:j.casacubertapuig@tudelft.nl" class="contact-item">
+        <div><div class="contact-item-label">Email</div><div class="contact-item-val">j.casacubertapuig@tudelft.nl</div></div>
+      </a>
+      <a href="https://www.a2sc.lr.tudelft.nl/" target="_blank" class="contact-item">
+        <div><div class="contact-item-label">Research Group</div><div class="contact-item-val">A2SC Lab, TU Delft</div></div>
+      </a>
+      <div class="contact-item" style="cursor:default;">
+        <div><div class="contact-item-label">Location</div><div class="contact-item-val">Delft, The Netherlands</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Jordi Casacuberta Puig · TU Delft</p>
+    <p>Aerospace Engineering · Flow Control · CFD</p>
+  </footer>
+
+</body>
+</html>
