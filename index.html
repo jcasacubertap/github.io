@@ -44,7 +44,7 @@
       color: var(--text);
       text-decoration: none;
     }
-    .nav-logo span { color: var(--accent); }
+    .nav-logo span { color: #ffffff; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
       font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif;
@@ -67,7 +67,7 @@
     .hero-bg {
       position: absolute; inset: 0;
       background-image: url('backGroundTransition.jpeg');
-      background-size: 150%;
+      background-size: 220%;
       background-position: center center;
       opacity: 0.85;
       filter: saturate(1.2);
@@ -75,13 +75,13 @@
     .hero-bg::after {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(105deg, rgba(10,12,16,0.88) 30%, rgba(10,12,16,0.55) 100%);
+      background: linear-gradient(105deg, rgba(10,12,16,1.80) 30%, rgba(10,12,16,0.25) 100%);
     }
     .hero-left {
       position: relative; z-index: 2;
       display: flex; flex-direction: column;
       justify-content: flex-start;
-      padding: 6rem 4rem 4rem 5rem;
+      padding: 9rem 4rem 4rem 5rem;
     }
     .hero-tag {
       font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif;
@@ -93,7 +93,7 @@
     }
     .hero-name {
       font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif;
-      font-size: clamp(3.2rem, 5.5vw, 5.5rem);
+      font-size: clamp(.8rem, 4vw, 4rem);
       font-weight: 400;
       line-height: 1.05;
       color: var(--text);
@@ -105,16 +105,16 @@
     }
     .hero-desc {
       font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif;
-      font-size: 1.1rem;
+      font-size: 1.4rem;
       line-height: 1.8;
       color: var(--muted);
-      max-width: 480px;
+      max-width: 1500px;
     }
     .hero-desc strong { color: var(--text); font-weight: 500; }
     .hero-motto {
       margin-top: 2.5rem;
       font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif;
-      font-size: 1.25rem;
+      font-size: 1.9rem;
       font-style: italic;
       color: var(--accent);
       border-left: 2px solid var(--accent);
@@ -141,21 +141,16 @@
     .hero-right {
       position: relative; z-index: 2;
       display: flex; align-items: flex-start; justify-content: center;
-      padding: 6rem 4rem 0;
+      padding: 14rem 22rem 0;
     }
-    .photo-frame { position: relative; width: 200px; }
-    .photo-frame::before {
-      content: '';
-      position: absolute;
-      top: -10px; left: -10px; right: 10px; bottom: -10px;
-      border: 1px solid var(--accent);
-      opacity: 0.4;
-      pointer-events: none;
-    }
+    .photo-frame { position: relative; width: 400px; }
     .photo-frame img {
       width: 100%; display: block;
       filter: grayscale(15%) contrast(1.05);
       object-fit: cover;
+      border-radius: 50%;
+      -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 75%);
+      mask-image: radial-gradient(circle, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 73%);
     }
 
     /* ── SECTIONS ── */
@@ -177,63 +172,62 @@
     }
 
     /* ── RESEARCH ── */
-    #research { border-top: 1px solid var(--border); max-width: 1200px; margin: 0 auto; }
-    .research-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5px; background: var(--border); }
-    .research-card { background: var(--surface); padding: 2.5rem; transition: background 0.25s; }
+    .research-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5px; background: transparent; }
+    .research-card { background: transparent; padding: 2.5rem; transition: background 0.25s; }
     .research-card:hover { background: #161b24; }
     .research-card-num { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 0.75rem; font-style: italic; color: var(--accent); margin-bottom: 1.2rem; }
     .research-card h3 { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 1.25rem; font-weight: 500; margin-bottom: 0.9rem; line-height: 1.3; }
     .research-card p { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 0.95rem; line-height: 1.75; color: var(--muted); }
 
     /* ── FLOW STRIP ── */
-    .flow-strip { width: 100%; height: 320px; overflow: hidden; position: relative; }
-    .flow-strip img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; filter: saturate(1.3) brightness(0.7); }
-    .flow-strip-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, var(--bg) 0%, transparent 30%, transparent 70%, var(--bg) 100%); }
-    .flow-strip-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: clamp(1.4rem, 3vw, 2.2rem); font-style: italic; color: var(--text); width: 80%; text-shadow: 0 2px 20px rgba(0,0,0,0.8); }
+    /* ── SHARED SECTION STYLE ── */
+    .page-section {
+      max-width: 100%;
+      margin: 0;
+      padding: 5rem 2rem 5rem 20rem;
+      border-top: 1px solid var(--border);
+    }
+    .page-section-title {
+      font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif;
+      font-size: clamp(2.6rem, 4.5vw, 4rem);
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 2.5rem;
+      line-height: 1.1;
+    }
 
-    /* ── ABOUT ── */
-    #about { border-top: 1px solid var(--border); display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: start; max-width: 1200px; margin: 0 auto; }
-    .about-text p { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 1.05rem; line-height: 1.85; color: var(--muted); margin-bottom: 1.2rem; }
-    .about-text p strong { color: var(--text); font-weight: 500; }
-    .about-text a { color: var(--accent); }
-    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: var(--border); margin-top: 3rem; }
-    .stat-cell { background: var(--surface); padding: 1.5rem 2rem; }
-    .stat-cell .val { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 2.6rem; color: var(--accent); line-height: 1; }
-    .stat-cell .lbl { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 0.75rem; font-style: italic; color: var(--muted); margin-top: 0.4rem; }
-    .about-links { display: flex; flex-direction: column; gap: 1rem; }
-    .about-link { display: flex; align-items: center; gap: 1rem; padding: 1.2rem 1.5rem; background: var(--surface); border: 1px solid var(--border); text-decoration: none; transition: border-color 0.2s, background 0.2s; }
-    .about-link:hover { border-color: var(--accent); background: #161b24; }
-    .about-link-icon { font-size: 1.2rem; width: 2rem; text-align: center; }
-    .about-link-text { flex: 1; }
-    .about-link-text span { display: block; font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 0.72rem; font-style: italic; color: var(--muted); }
-    .about-link-text strong { display: block; font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 0.95rem; font-weight: 500; color: var(--text); margin-top: 0.15rem; }
-    .about-link-arrow { color: var(--accent); font-size: 0.9rem; }
+    /* ── RESEARCH ── */
+    .research-grid { display: flex; flex-direction: column; gap: 2rem; }
+    .research-item { display: grid; grid-template-columns: 2rem 1fr; gap: 1.5rem; align-items: start; }
+    .research-item-num { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 1.4rem; color: var(--accent); padding-top: 0.2rem; }
+    .research-item h3 { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 1.4rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--text); }
+    .research-item p { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 1.2rem; line-height: 1.8; color: var(--muted); }
 
     /* ── PUBLICATIONS ── */
-    #publications { border-top: 1px solid var(--border); max-width: 1200px; margin: 0 auto; }
-    .pub-list { display: flex; flex-direction: column; gap: 1px; background: var(--border); }
-    .pub-item { background: var(--surface); padding: 2rem 2.5rem; display: grid; grid-template-columns: auto 1fr auto; gap: 2rem; align-items: center; transition: background 0.2s; }
-    .pub-item:hover { background: #161b24; }
-    .pub-year { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 0.85rem; font-style: italic; color: var(--accent); min-width: 3rem; }
-    .pub-content h4 { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 1.05rem; font-weight: 500; margin-bottom: 0.3rem; }
-    .pub-content p { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 0.85rem; color: var(--muted); font-style: italic; }
-    .pub-link { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 0.8rem; font-style: italic; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.4rem 0.8rem; white-space: nowrap; transition: all 0.2s; }
-    .pub-link:hover { border-color: var(--accent); color: var(--accent); }
-    .pub-more { margin-top: 2rem; text-align: center; }
+    .pub-list { display: flex; flex-direction: column; gap: 0; }
+    .pub-item { padding: 1.5rem 0; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 3rem 1fr auto; gap: 1.5rem; align-items: start; }
+    .pub-item:first-child { border-top: 1px solid var(--border); }
+    .pub-year { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 1.6rem; color: var(--accent); padding-top: 0.2rem; }
+    .pub-content h4 { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 1.3rem; font-weight: 500; margin-bottom: 0.3rem; color: var(--text); }
+    .pub-content p { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 1.20rem; color: var(--muted); font-style: italic; }
+    .pub-link { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; display: none; font-size: 0.8rem; font-style: italic; color: var(--accent); text-decoration: none; white-space: nowrap; padding-top: 0.2rem; transition: opacity 0.2s; }
+    .pub-link:hover { opacity: 0.7; }
+    .pub-more { margin-top: 2rem; }
+    .pub-more a { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 0.95rem; font-style: italic; color: var(--accent); text-decoration: none; }
+    .pub-more a:hover { opacity: 0.7; }
+
+    /* ── REPOSITORY ── */
+    .repo-text { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 1rem; line-height: 1.85; color: var(--muted); margin-bottom: 2rem; }
 
     /* ── CONTACT ── */
-    #contact { border-top: 1px solid var(--border); max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
-    .contact-left .big-text { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: clamp(2.5rem, 4vw, 4rem); line-height: 1.1; margin-bottom: 1.5rem; }
-    .contact-left .big-text em { font-style: italic; color: var(--accent); }
-    .contact-left p { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 1rem; line-height: 1.8; color: var(--muted); }
-    .contact-right { display: flex; flex-direction: column; justify-content: center; gap: 1rem; }
-    .contact-item { display: flex; align-items: center; gap: 1.2rem; padding: 1.4rem 1.6rem; border: 1px solid var(--border); text-decoration: none; transition: border-color 0.2s; }
-    .contact-item:hover { border-color: var(--accent); }
-    .contact-item-label { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 0.75rem; font-style: italic; color: var(--muted); }
-    .contact-item-val { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 0.95rem; color: var(--text); margin-top: 0.2rem; }
+    .contact-list { display: flex; flex-direction: column; gap: 1.2rem; }
+    .contact-item { display: flex; flex-direction: column; gap: 0.2rem; }
+    .contact-item-label { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 0.8rem; font-style: italic; color: var(--muted); }
+    .contact-item-val { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 1.05rem; color: var(--text); text-decoration: none; }
+    .contact-item-val:hover { color: var(--accent); }
 
     /* ── FOOTER ── */
-    footer { border-top: 1px solid var(--border); padding: 2.5rem 5rem; display: flex; justify-content: space-between; align-items: center; }
+    footer { border-top: 1px solid var(--border); padding: 2rem 5rem; }
     footer p { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 0.8rem; font-style: italic; color: var(--muted); }
 
     /* ── RESPONSIVE ── */
@@ -243,24 +237,21 @@
       .hero { grid-template-columns: 1fr; }
       .hero-left { padding: 8rem 2rem 4rem; }
       .hero-right { display: none; }
-      section { padding: 5rem 2rem; }
-      .research-grid { grid-template-columns: 1fr; }
-      #about { grid-template-columns: 1fr; gap: 3rem; }
-      #contact { grid-template-columns: 1fr; gap: 3rem; }
-      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem; }
-      .pub-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .page-section { padding: 4rem 2rem; }
+      .pub-item { grid-template-columns: 2.5rem 1fr; }
+      .pub-link { display: none; }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
   <nav>
-    <a href="#" class="nav-logo">Jordi <span>Casacuberta</span></a>
     <ul class="nav-links">
       <li><a href="#research">Research</a></li>
-      <li><a href="#publications">Publications</a></li>
       <li><a href="#repository">Repository</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
     </ul>
   </nav>
 
@@ -269,161 +260,319 @@
     <div class="hero-left">
       <h1 class="hero-name">Jordi Casacuberta</h1>
       <div class="hero-divider"></div>
-      <p class="hero-desc">
-        Researcher at the intersection of <strong>Flow Stability Theory</strong> and <strong>Computational Fluid Dynamics</strong>. Working to make aviation cleaner through laminar wing design.
-      </p>
-      <blockquote class="hero-motto">Aviation will be green, or will not be.</blockquote>
-      <div class="hero-ctas">
-        <a href="#publications" class="btn btn-primary">View Publications</a>
-        <a href="#contact" class="btn btn-outline">Get in Touch</a>
-      </div>
+
+       <p class="hero-desc" style="margin-top: 1rem; color: #ffffff;">
+       I am a Postdoctoral Researcher in Numerical Aerodynamics and Flow Stability at TU Delft. My research focuses on the theoretical and computational study of laminar-turbulent transition in aerodynamic boundary layers.
+       </p>
+       
+       <p class="hero-desc" style="margin-top: 1rem; color: #ffffff;">
+       In our group of Flow Control we develop novel laminar wings to significantly reduce the pollutant emissions. Follow us and join the revolution on super-efficient aircraft wings since, aviation will be green, or will not be.
+       </p>
+
+      <blockquote class="hero-motto">Making aviation greener through aerodynamics.</blockquote>
+
+      <div style="display: flex; gap: 1.5rem; margin-top: 9.0rem;">
+      <a href="https://scholar.google.com/citations?user=vDq5fGsAAAAJ&hl=en" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 1.8rem;" title="Google Scholar">
+        <i class="fa-brands fa-google-scholar"></i>
+      </a>
+      <a href="https://orcid.org/0000-0003-2029-9305" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 1.8rem;" title="ORCID">
+        <i class="fa-brands fa-orcid"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/jordi-casacuberta-phd-28000744/" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 1.8rem;" title="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://x.com/jcasacubertap" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 1.8rem;" title="Twitter/X">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+    </div>
     </div>
     <div class="hero-right">
       <div class="photo-frame">
-        <img src="personal.png" alt="Jordi Casacuberta" />
+        <img src="personal.jpg" alt="Jordi Casacuberta" />
       </div>
     </div>
   </div>
 
-  <section id="research">
-    <p class="section-label">Focus Areas</p>
-    <h2 class="section-title">Research Interests</h2>
+  <!-- RESEARCH -->
+  <section id="research" class="page-section">
+    <h2 class="page-section-title">Research</h2>
     <div class="research-grid">
-      <div class="research-card">
-        <p class="research-card-num">i.</p>
-        <h3>Laminar–Turbulent Transition</h3>
-        <p>Investigating the mechanisms by which laminar boundary layers break down to turbulence, with a focus on crossflow and Tollmien–Schlichting instabilities on swept wings.</p>
+      <div class="research-item">
+        <span class="research-item-num">I.</span>
+        <div>
+          <h3>Physical understanding of passive wing-flow control & laminarization</h3>
+          <p>Investigating the mechanisms by which smooth and sharp surface features passively stabilize the stationary crossflow instability.</p>
+        </div>
       </div>
-      <div class="research-card">
-        <p class="research-card-num">ii.</p>
-        <h3>Passive Flow Control & Laminarization</h3>
-        <p>Designing novel wing geometries and surface treatments that delay transition and reduce skin-friction drag — a key lever for sustainable aviation.</p>
+      <div class="research-item">
+        <span class="research-item-num">II.</span>
+        <div>
+          <h3>Optimization of wing-surface reliefs for flow control</h3>
+          <p>Developing Bayesian-optimization frameworks coupled to Harmonic Navier-Stokes solvers to design optimal wing-surface reliefs for flow control.</p>
+        </div>
       </div>
-      <div class="research-card">
-        <p class="research-card-num">iii.</p>
-        <h3>Computational Fluid Dynamics</h3>
-        <p>High-fidelity numerical simulations including Direct Numerical Simulation (DNS) and global stability analysis of the Navier–Stokes equations.</p>
+      <div class="research-item">
+        <span class="research-item-num">III.</span>
+        <div>
+          <h3>Mathematical modelling of boundary-layer instability</h3>
+          <p>Establishing a uniform mathematical framework uniting how Tollmien-Schlichting and crossflow instabilities interact with inhomogeneities through production.</p>
+        </div>
+      </div>
+      <div class="research-item">
+        <span class="research-item-num">IV.</span>
+        <div>
+          <h3>Mechanisms of laminar-turbulent transition</h3>
+          <p>Performing Direct Numerical Simulations (DNS) to elucidate mechanisms of laminar breakdown, with emphasis on type-II secondary crossflow instabilities.</p>
+        </div>
+      </div>
+      <div class="research-item">
+        <span class="research-item-num">V.</span>
+        <div>
+          <h3>System identification for effective instability manipulation</h3>
+          <p>Creating data-driven frameworks to isolate key base-flow features for effective instability control and transition prediction.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="flow-strip">
-    <img src="backGroundTransition.jpeg" alt="Laminar-turbulent transition simulation" />
-    <div class="flow-strip-overlay"></div>
-    <p class="flow-strip-text">"Using Computational Fluid Dynamics towards greener aviation"</p>
-  </div>
-
-  <section id="about">
-    <div>
-      <p class="section-label">Background</p>
-      <h2 class="section-title">About me</h2>
-      <div class="about-text">
-        <p>I hold a <strong>PhD in Aerospace Engineering</strong> from the Delft University of Technology (TU Delft, The Netherlands), where I remain as a researcher in the <a href="https://www.a2sc.lr.tudelft.nl/">Flow Control group (A2SC Lab)</a>.</p>
-        <p>My research sits at the frontier of aerodynamic efficiency — understanding how and where turbulence begins on a wing surface is essential to controlling it. Through careful stability analysis and large-scale simulations, I develop passive strategies that keep the boundary layer laminar for longer, reducing drag and fuel burn.</p>
-        <p>Beyond aerospace, my computational methods have been applied to <strong>blood-flow dynamics</strong>, illustrating the broad relevance of flow instability physics across engineering and medicine.</p>
-      </div>
-      <div class="about-stats">
-        <div class="stat-cell"><div class="val">10+</div><div class="lbl">Publications</div></div>
-        <div class="stat-cell"><div class="val">5+</div><div class="lbl">Years at TU Delft</div></div>
-        <div class="stat-cell"><div class="val">3</div><div class="lbl">Research Domains</div></div>
-        <div class="stat-cell"><div class="val">∞</div><div class="lbl">Curiosity</div></div>
-      </div>
-    </div>
-    <div class="about-links">
-      <p class="section-label" style="margin-bottom:1.5rem;">Find me at</p>
-      <a href="https://www.a2sc.lr.tudelft.nl/" target="_blank" class="about-link">
-        <div class="about-link-icon">🏛</div>
-        <div class="about-link-text"><span>Research Group</span><strong>A2SC Lab — TU Delft</strong></div>
-        <span class="about-link-arrow">→</span>
-      </a>
-      <a href="#" target="_blank" class="about-link">
-        <div class="about-link-icon">🎓</div>
-        <div class="about-link-text"><span>Academic Profile</span><strong>Google Scholar</strong></div>
-        <span class="about-link-arrow">→</span>
-      </a>
-      <a href="#" target="_blank" class="about-link">
-        <div class="about-link-icon">🔬</div>
-        <div class="about-link-text"><span>Researcher ID</span><strong>ORCID Profile</strong></div>
-        <span class="about-link-arrow">→</span>
-      </a>
-      <a href="#" target="_blank" class="about-link">
-        <div class="about-link-icon">💼</div>
-        <div class="about-link-text"><span>Professional Network</span><strong>LinkedIn</strong></div>
-        <span class="about-link-arrow">→</span>
-      </a>
-      <a href="#" class="about-link">
-        <div class="about-link-icon">📄</div>
-        <div class="about-link-text"><span>Curriculum Vitae</span><strong>Download CV (PDF)</strong></div>
-        <span class="about-link-arrow">↓</span>
-      </a>
-    </div>
-  </section>
-
-  <section id="publications">
-    <p class="section-label">Selected Works</p>
-    <h2 class="section-title">Publications</h2>
-    <div class="pub-list">
-      <div class="pub-item">
-        <span class="pub-year">2024</span>
-        <div class="pub-content">
-          <h4>Nonlinear optimal perturbations in a swept-wing boundary layer</h4>
-          <p>Journal of Fluid Mechanics · Casacuberta, J. et al.</p>
-        </div>
-        <a href="#" class="pub-link">View →</a>
-      </div>
-      <div class="pub-item">
-        <span class="pub-year">2023</span>
-        <div class="pub-content">
-          <h4>Transition prediction under the influence of surface imperfections using PSE</h4>
-          <p>AIAA Journal · Casacuberta, J. et al.</p>
-        </div>
-        <a href="#" class="pub-link">View →</a>
-      </div>
-      <div class="pub-item">
-        <span class="pub-year">2022</span>
-        <div class="pub-content">
-          <h4>Direct numerical simulation of crossflow instability with forward-facing steps</h4>
-          <p>Physical Review Fluids · Casacuberta, J. et al.</p>
-        </div>
-        <a href="#" class="pub-link">View →</a>
-      </div>
-      <div class="pub-item">
-        <span class="pub-year">2021</span>
-        <div class="pub-content">
-          <h4>Instability mechanisms in blood flow through a stenosed carotid artery</h4>
-          <p>Journal of Biomechanics · Casacuberta, J. et al.</p>
-        </div>
-        <a href="#" class="pub-link">View →</a>
-      </div>
-    </div>
-    <div class="pub-more">
-      <a href="#" class="btn btn-outline" style="display:inline-flex;">Full list on Google Scholar →</a>
-    </div>
-  </section>
-
-  <!-- REPOSITORY SECTION -->
-  <section id="repository" style="border-top: 1px solid var(--border); max-width: 1200px; margin: 0 auto;">
-    <p class="section-label">Code & Data</p>
-    <h2 class="section-title">Repository</h2>
-    <p style="font-family: 'Computer Modern Serif', 'EB Garamond', Georgia, serif; font-size: 1.05rem; line-height: 1.85; color: var(--muted); max-width: 640px;">
-      Open-source code and datasets related to my research will be listed here. Links to GitHub repositories, Zenodo datasets, and supplementary materials for published work.
+  <!-- REPOSITORY -->
+  <section id="repository" class="page-section">
+    <h2 class="page-section-title">Repository</h2>
+    <p class="repo-text" style="font-size: 1.4rem;">Open-source code to simulate and model wing-flow boundary layer and instability (OpenFOAM and Julia):</p>
+    <p class="repo-text" style="font-size: 2.0rem;"">
+    <a href="https://github.com/jcasacubertap/airPower" style="color: var(--accent); text-decoration: underline;">
+      AirPower
+    </a>
     </p>
   </section>
 
-  <section id="contact">
-    <div class="contact-left">
-      <h2 class="big-text">Let's<br><em>connect.</em></h2>
-      <p>Whether you're interested in collaboration, have questions about my research, or want to discuss opportunities in sustainable aviation — I'm glad to hear from you.</p>
-    </div>
-    <div class="contact-right">
-      <a href="/cdn-cgi/l/email-protection#fe94d09d9f8d9f9d8b9c9b8c8a9f8e8b9799be8a8b9a9b92988ad09092" class="contact-item">
-        <div><div class="contact-item-label">Email</div><div class="contact-item-val"><span class="__cf_email__" data-cfemail="abc185c8cad8cac8dec9ced9dfcadbdec2ccebdfdecfcec7cddf85c5c7">[email&#160;protected]</span></div></div>
-      </a>
-      <a href="https://www.a2sc.lr.tudelft.nl/" target="_blank" class="contact-item">
-        <div><div class="contact-item-label">Research Group</div><div class="contact-item-val">A2SC Lab, TU Delft</div></div>
-      </a>
-      <div class="contact-item" style="cursor:default;">
-        <div><div class="contact-item-label">Location</div><div class="contact-item-val">Delft, The Netherlands</div></div>
+  <!-- PUBLICATIONS -->
+  <section id="publications" class="page-section">
+    <h2 class="page-section-title">Publications</h2>
+    <div class="pub-list">
+
+      <div class="pub-item">
+        <span class="pub-year">2026</span>
+        <div class="pub-content">
+          <h4>Linear and nonlinear interactions between stationary crossflow instabilities and a smooth surface hump</h4>
+          <p>S. Westerbeek, <span style="color: #ffffff;">J. Casacuberta</span>, M. Kotsonis · <em>J. Fluid Mech.</em> 1026, A43</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
       </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2025</span>
+        <div class="pub-content">
+          <h4>Non-orthogonal plane-marching parabolized stability equations for the secondary instability of crossflow vortices</h4>
+          <p>K. J. Groot, <span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel · <em>Comput. & Fluids</em> 306, 106947</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2025</span>
+        <div class="pub-content">
+          <h4>Delay of swept-wing transition using a surface hump</h4>
+          <p>A. F. Rius-Vidales, L. Morais, S. Westerbeek, <span style="color: #ffffff;">J. Casacuberta</span>, M. Soyler, M. Kotsonis · <em>J. Fluid Mech.</em> 1014, A35</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2025</span>
+        <div class="pub-content">
+          <h4>Streaky perturbations in swept-wing flow over forward-facing step</h4>
+          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Westerbeek, J. A. Franco, K. J. Groot, S. Hickel, S. Hein, M. Kotsonis · <em>Phys. Rev. Fluids</em> 10, 023902</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2024</span>
+        <div class="pub-content">
+          <h4>Numerical investigation of crossflow-driven-transition delay through local sharp surface modification</h4>
+          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, A. F. Rius-Vidales, M. Kotsonis · <em>10th IUTAM Symposium</em>, Nagano, Japan</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2024</span>
+        <div class="pub-content">
+          <h4>Passive stabilization of crossflow instabilities by a reverse lift-up effect</h4>
+          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>Phys. Rev. Fluids</em> 9, 043903</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2023</span>
+        <div class="pub-content">
+          <h4>Experimental and numerical investigation into the drag performance of dimpled surfaces in a turbulent boundary layer</h4>
+          <p>O.W.G. van Campenhout et al. <span style="color: #ffffff;"></span> · <em>Int. J. Heat Fluid Flow</em> 100, 109110</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2023</span>
+        <div class="pub-content">
+          <h4>Laminar-turbulent transition in swept-wing flows with a supercritical forward-facing step</h4>
+          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>DLES 2023</em>, ERCOFTAC Series, vol 31, Springer</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2023</span>
+        <div class="pub-content">
+          <h4>How do forward-facing steps promote laminar-turbulent transition of swept-wing flow?</h4>
+          <p><span style="color: #ffffff;">J. Casacuberta</span>, K. J. Groot, S. Hickel, M. Kotsonis · <em>14th ERCOFTAC Symposium</em>, Barcelona, Spain</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2022</span>
+        <div class="pub-content">
+          <h4>Direct numerical simulation of interaction between a stationary crossflow instability and forward-facing steps</h4>
+          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, S. Westerbeek, M. Kotsonis · <em>J. Fluid Mech.</em> 943, A46</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2022</span>
+        <div class="pub-content">
+          <h4>Secondary instabilities in swept-wing boundary layers: Direct Numerical Simulations and BiGlobal stability analysis</h4>
+          <p><span style="color: #ffffff;">J. Casacuberta</span>, K. J. Groot, S. Hickel, M. Kotsonis · <em>AIAA</em> 2022-2330</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2022</span>
+        <div class="pub-content">
+          <h4>Laminar-turbulent transition in supercritical forward-facing steps in crossflow</h4>
+          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>13th Workshop on Direct and Large-Eddy Simulation</em>, Udine, Italy</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2022</span>
+        <div class="pub-content">
+          <h4>The reverse lift-up effect in crossflow instabilities over surface irregularities</h4>
+          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>European Drag Reduction and Flow Control Meeting</em>, Paris, France</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2022</span>
+        <div class="pub-content">
+          <h4>Mechanisms of interaction between a stationary crossflow instability and backward-facing steps</h4>
+          <p>O. Krochak, <span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>12th TSFP</em>, Osaka, Japan</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2022</span>
+        <div class="pub-content">
+          <h4>An efficient harmonic Navier-Stokes solver for non-linear stability problems in complex domains</h4>
+          <p>S. Westerbeek, <span style="color: #ffffff;">J. Casacuberta</span>, M. Kotsonis · <em>14th ERCOFTAC SIG 33 Workshop</em>, Cádiz, Spain</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2021</span>
+        <div class="pub-content">
+          <h4>Mechanisms of interaction between stationary crossflow instabilities and forward-facing steps</h4>
+          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>AIAA</em> 2021-0854</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2020</span>
+        <div class="pub-content">
+          <h4>Transitional Flow Dynamics Behind a Micro-Ramp</h4>
+          <p><span style="color: #ffffff;">J. Casacuberta</span>, K. J. Groot, Q. Ye, S. Hickel · <em>Flow Turb. Comb.</em> (2020)</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2019</span>
+        <div class="pub-content">
+          <h4>Linear and Non-Linear Dynamics of a Micro-Ramp Wake</h4>
+          <p>K. J. Groot, <span style="color: #ffffff;">J. Casacuberta</span>, Q. Ye, S. Hickel · <em>Ercoftac Bulletin</em> 118, March 2019</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2018</span>
+        <div class="pub-content">
+          <h4>Effectivity and Efficiency of Selective Frequency Damping for the Computation of Unstable Steady-State Solutions</h4>
+          <p><span style="color: #ffffff;">J. Casacuberta</span>, K. J. Groot, H. J. Tol, S. Hickel · <em>J. Comput. Phys.</em> 375, 481–497</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2018</span>
+        <div class="pub-content">
+          <h4>Transitional flow dynamics behind a micro-ramp</h4>
+          <p><span style="color: #ffffff;">J. Casacuberta</span>, K. J. Groot, Q. Ye, S. Hickel · <em>12th ERCOFTAC Symposium</em>, Montpellier, France</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2018</span>
+        <div class="pub-content">
+          <h4>Linear and non-linear dynamics of a micro-ramp wake</h4>
+          <p>K. J. Groot, <span style="color: #ffffff;">J. Casacuberta</span>, Q. Ye, S. Hickel · <em>13th ERCOFTAC SIG 33 Workshop</em>, Paraty, Brazil</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2016</span>
+        <div class="pub-content">
+          <h4>Estimation of wall shear stress using 4D flow cardiovascular MRI and computational fluid dynamics</h4>
+          <p>E. Soudah, <span style="color: #ffffff;">J. Casacuberta</span> et al. · <em>J. Mech. Med. Biol.</em> 17, 1750046</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
+      <div class="pub-item">
+        <span class="pub-year">2015</span>
+        <div class="pub-content">
+          <h4>Blood Flow Patterns in Thoracic Aorta using 4D Phase-Contrast MRI and CFD</h4>
+          <p><span style="color: #ffffff;">J. Casacuberta</span>, E. Soudah et al. · <em>ICCB 2015</em>, Barcelona, Spain</p>
+        </div>
+        <a href="#" class="pub-link">→</a>
+      </div>
+
     </div>
-  </section
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section id="philosophy" class="page-section">
+    <h2 class="page-section-title">Philosophy</h2>
+    <p class="repo-text" style="font-size: 1.4rem;">This section is still lacking objective meaning and shaping its values –much like existence itself.</p>
+    <div style="text-align: left; margin-left:  14rem; margin-top: 3rem;">
+      <img src="ApoDio.png" alt="Apollo and Dionysus" style="max-width: 50%; height: auto; border-radius: 80px;" />
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Jordi Casacuberta · TU Delft · Aerospace Engineering</p>
+  </footer>
+
+</body>
+</html>
