@@ -231,16 +231,23 @@
     footer p { font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif; font-size: 0.8rem; font-style: italic; color: var(--muted); }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      nav { padding: 1.2rem 1.5rem; }
-      .nav-links { gap: 1.2rem; }
-      .hero { grid-template-columns: 1fr; }
-      .hero-left { padding: 8rem 2rem 4rem; }
-      .hero-right { display: none; }
-      .page-section { padding: 4rem 2rem; }
-      .pub-item { grid-template-columns: 2.5rem 1fr; }
-      .pub-link { display: none; }
-    }
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.85rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 6rem 1.5rem 3rem; }
+    .hero-right { display: none; }
+    .hero-name { font-size: 2.5rem; }
+    .hero-desc { font-size: 1rem; max-width: 100%; }
+    .hero-motto { font-size: 1.2rem; }
+    .page-section { padding: 3rem 1.5rem; }
+    .page-section-title { font-size: 2rem; }
+    .pub-item { grid-template-columns: 2.5rem 1fr; }
+    .pub-link { display: none; }
+    .research-item { grid-template-columns: 1.5rem 1fr; }
+    img { max-width: 100% !important; }
+  }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
