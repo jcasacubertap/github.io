@@ -66,7 +66,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background-image: url('backGroundTransition.jpeg');
+      background-image: url('backGroundTransition.psd');
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -109,7 +109,7 @@
       font-size: 1.4rem;
       line-height: 1.8;
       color: var(--muted);
-      max-width: 1500px;
+      max-width: 100%;
     }
     .hero-desc strong { color: var(--text); font-weight: 500; }
     .hero-motto {
@@ -142,9 +142,10 @@
     .hero-right {
       position: relative; z-index: 2;
       display: flex; align-items: flex-start; justify-content: center;
-      padding: 14rem 22rem 0;
+      flex-direction: column;
+      padding: 9rem 3rem 0 2rem;
     }
-    .photo-frame { position: relative; width: 550px; }
+    .photo-frame { position: relative; width: 500px; }
     .photo-frame img {
       width: 100%; display: block;
       filter: grayscale(15%) contrast(1.05);
@@ -291,9 +292,7 @@
        In our group of Flow Control we develop novel laminar wings to significantly reduce the pollutant emissions. Follow us and join the revolution on super-efficient aircraft wings since, aviation will be green, or will not be.
        </p>
 
-      <blockquote class="hero-motto">Making aviation greener through aerodynamics.</blockquote>
-
-      <div style="display: flex; gap: 1.5rem; margin-top: 9.0rem;">
+      <div style="display: flex; gap: 1.5rem; margin-top: 3rem;">
       <a href="https://scholar.google.com/citations?user=vDq5fGsAAAAJ&hl=en" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 1.8rem;" title="Google Scholar">
         <i class="fa-brands fa-google-scholar"></i>
       </a>
@@ -311,6 +310,7 @@
     <div class="hero-right">
       <div class="photo-frame">
         <img src="personal.jpg" alt="Jordi Casacuberta" />
+        <blockquote class="hero-motto" style="margin-top: 1.5rem; font-size: 1.3rem;">Making aviation greener through aerodynamics.</blockquote>
       </div>
     </div>
   </div>
