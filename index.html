@@ -70,7 +70,7 @@
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
-      opacity: 0.85;
+      opacity: 0.92;
       filter: saturate(1.2);
     }
     .hero-bg::after {
@@ -144,14 +144,14 @@
       display: flex; align-items: flex-start; justify-content: center;
       padding: 14rem 22rem 0;
     }
-    .photo-frame { position: relative; width: 400px; }
+    .photo-frame { position: relative; width: 550px; }
     .photo-frame img {
       width: 100%; display: block;
       filter: grayscale(15%) contrast(1.05);
       object-fit: cover;
-      border-radius: 50%;
-      -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 75%);
-      mask-image: radial-gradient(circle, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 73%);
+      border-radius: 0;
+      -webkit-mask-image: none;
+      mask-image: none;
     }
 
     .news-date { font-family: "Computer Modern Serif", serif; font-size: 1.2rem; font-style: italic; color: var(--accent); margin-bottom: 0.5rem; }
