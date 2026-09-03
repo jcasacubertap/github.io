@@ -11,12 +11,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/fonts.css" />
   <style>
     :root {
-      --bg: #0a0c10;
-      --surface: #10141a;
-      --border: rgba(255,255,255,0.07);
-      --text: #e8e4dc;
-      --muted: #7a8090;
-      --accent: #c8a96e;
+      --bg: #ffffff;
+      --surface: #f5f5f3;
+      --border: rgba(0,0,0,0.10);
+      --text: #1a1a1a;
+      --muted: #555555;
+      --accent: #8b6914;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -33,7 +33,7 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
       padding: 1.4rem 3rem;
-      background: rgba(10,12,16,0.90);
+      background: rgba(255,255,255,0.92);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
@@ -44,7 +44,7 @@
       color: var(--text);
       text-decoration: none;
     }
-    .nav-logo span { color: #ffffff; }
+    .nav-logo span { color: var(--accent); }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
       font-family: "Computer Modern Serif", "EB Garamond", Georgia, serif;
@@ -76,7 +76,7 @@
     .hero-bg::after {
       content: '';
       position: absolute; inset: 0;
-      background: linear-gradient(105deg, rgba(10,12,16,1.80) 30%, rgba(10,12,16,0.25) 100%);
+      background: linear-gradient(105deg, rgba(255,255,255,0.92) 30%, rgba(255,255,255,0.20) 100%);
     }
     .hero-left {
       position: relative; z-index: 2;
@@ -283,11 +283,11 @@
       <h1 class="hero-name">Jordi Casacuberta</h1>
       <div class="hero-divider"></div>
 
-       <p class="hero-desc" style="margin-top: 1rem; color: #ffffff;">
+       <p class="hero-desc" style="margin-top: 1rem;">
        I am a Postdoctoral Researcher in Numerical Aerodynamics and Flow Stability at TU Delft. My research focuses on the theoretical and computational study of laminar-turbulent transition in aerodynamic boundary layers.
        </p>
        
-       <p class="hero-desc" style="margin-top: 1rem; color: #ffffff;">
+       <p class="hero-desc" style="margin-top: 1rem;">
        In our group of Flow Control we develop novel laminar wings to significantly reduce the pollutant emissions. Follow us and join the revolution on super-efficient aircraft wings since, aviation will be green, or will not be.
        </p>
 
@@ -377,7 +377,7 @@
         <span class="pub-year">2026</span>
         <div class="pub-content">
           <h4>Transition of swept-wing boundary-layer flow induced by a forward-facing step</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, K. J. Groot, S. Hickel, M. Kotsonis · <em>J. Fluid Mech.</em> 1041,  A19</p>
+          <p><span style="">J. Casacuberta</span>, K. J. Groot, S. Hickel, M. Kotsonis · <em>J. Fluid Mech.</em> 1041,  A19</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -386,7 +386,7 @@
         <span class="pub-year">2026</span>
         <div class="pub-content">
           <h4>Selective Frequency Damping as an outlet strategy for attenuating boundary-layer instability waves</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel · <em>Wave-Ned 2026</em>, Delft, The Netherlands</p>
+          <p><span style="">J. Casacuberta</span>, S. Hickel · <em>Wave-Ned 2026</em>, Delft, The Netherlands</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -395,7 +395,7 @@
         <span class="pub-year">2026</span>
         <div class="pub-content">
           <h4>Effect of localised wall heating on crossflow instability in a swept-wing boundary layer</h4>
-          <p>G. Barocco, Y. Chen, M. Barahona, <span style="color: #ffffff;">J. Casacuberta</span> · <em>14th TSFP</em>, Hidelberg, Germany</p>
+          <p>G. Barocco, Y. Chen, M. Barahona, <span style="">J. Casacuberta</span> · <em>14th TSFP</em>, Hidelberg, Germany</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -404,7 +404,7 @@
         <span class="pub-year">2026</span>
         <div class="pub-content">
           <h4>Linear and nonlinear interactions between stationary crossflow instabilities and a smooth surface hump</h4>
-          <p>S. Westerbeek, <span style="color: #ffffff;">J. Casacuberta</span>, M. Kotsonis · <em>J. Fluid Mech.</em> 1026, A43</p>
+          <p>S. Westerbeek, <span style="">J. Casacuberta</span>, M. Kotsonis · <em>J. Fluid Mech.</em> 1026, A43</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -413,7 +413,7 @@
         <span class="pub-year">2025</span>
         <div class="pub-content">
           <h4>Non-orthogonal plane-marching parabolized stability equations for the secondary instability of crossflow vortices</h4>
-          <p>K. J. Groot, <span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel · <em>Comput. & Fluids</em> 306, 106947</p>
+          <p>K. J. Groot, <span style="">J. Casacuberta</span>, S. Hickel · <em>Comput. & Fluids</em> 306, 106947</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -422,7 +422,7 @@
         <span class="pub-year">2025</span>
         <div class="pub-content">
           <h4>Delay of swept-wing transition using a surface hump</h4>
-          <p>A. F. Rius-Vidales, L. Morais, S. Westerbeek, <span style="color: #ffffff;">J. Casacuberta</span>, M. Soyler, M. Kotsonis · <em>J. Fluid Mech.</em> 1014, A35</p>
+          <p>A. F. Rius-Vidales, L. Morais, S. Westerbeek, <span style="">J. Casacuberta</span>, M. Soyler, M. Kotsonis · <em>J. Fluid Mech.</em> 1014, A35</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -431,7 +431,7 @@
         <span class="pub-year">2025</span>
         <div class="pub-content">
           <h4>Streaky perturbations in swept-wing flow over forward-facing step</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Westerbeek, J. A. Franco, K. J. Groot, S. Hickel, S. Hein, M. Kotsonis · <em>Phys. Rev. Fluids</em> 10, 023902</p>
+          <p><span style="">J. Casacuberta</span>, S. Westerbeek, J. A. Franco, K. J. Groot, S. Hickel, S. Hein, M. Kotsonis · <em>Phys. Rev. Fluids</em> 10, 023902</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -440,7 +440,7 @@
         <span class="pub-year">2024</span>
         <div class="pub-content">
           <h4>Numerical investigation of crossflow-driven-transition delay through local sharp surface modification</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, A. F. Rius-Vidales, M. Kotsonis · <em>10th IUTAM Symposium</em>, Nagano, Japan</p>
+          <p><span style="">J. Casacuberta</span>, S. Hickel, A. F. Rius-Vidales, M. Kotsonis · <em>10th IUTAM Symposium</em>, Nagano, Japan</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -449,7 +449,7 @@
         <span class="pub-year">2024</span>
         <div class="pub-content">
           <h4>Passive stabilization of crossflow instabilities by a reverse lift-up effect</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>Phys. Rev. Fluids</em> 9, 043903</p>
+          <p><span style="">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>Phys. Rev. Fluids</em> 9, 043903</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -458,7 +458,7 @@
         <span class="pub-year">2023</span>
         <div class="pub-content">
           <h4>Experimental and numerical investigation into the drag performance of dimpled surfaces in a turbulent boundary layer</h4>
-          <p>O.W.G. van Campenhout et al. <span style="color: #ffffff;"></span> · <em>Int. J. Heat Fluid Flow</em> 100, 109110</p>
+          <p>O.W.G. van Campenhout et al. <span style=""></span> · <em>Int. J. Heat Fluid Flow</em> 100, 109110</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -467,7 +467,7 @@
         <span class="pub-year">2023</span>
         <div class="pub-content">
           <h4>Laminar-turbulent transition in swept-wing flows with a supercritical forward-facing step</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>DLES 2023</em>, ERCOFTAC Series, vol 31, Springer</p>
+          <p><span style="">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>DLES 2023</em>, ERCOFTAC Series, vol 31, Springer</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -476,7 +476,7 @@
         <span class="pub-year">2023</span>
         <div class="pub-content">
           <h4>How do forward-facing steps promote laminar-turbulent transition of swept-wing flow?</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, K. J. Groot, S. Hickel, M. Kotsonis · <em>14th ERCOFTAC Symposium</em>, Barcelona, Spain</p>
+          <p><span style="">J. Casacuberta</span>, K. J. Groot, S. Hickel, M. Kotsonis · <em>14th ERCOFTAC Symposium</em>, Barcelona, Spain</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -485,7 +485,7 @@
         <span class="pub-year">2022</span>
         <div class="pub-content">
           <h4>Direct numerical simulation of interaction between a stationary crossflow instability and forward-facing steps</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, S. Westerbeek, M. Kotsonis · <em>J. Fluid Mech.</em> 943, A46</p>
+          <p><span style="">J. Casacuberta</span>, S. Hickel, S. Westerbeek, M. Kotsonis · <em>J. Fluid Mech.</em> 943, A46</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -494,7 +494,7 @@
         <span class="pub-year">2022</span>
         <div class="pub-content">
           <h4>Secondary instabilities in swept-wing boundary layers: Direct Numerical Simulations and BiGlobal stability analysis</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, K. J. Groot, S. Hickel, M. Kotsonis · <em>AIAA</em> 2022-2330</p>
+          <p><span style="">J. Casacuberta</span>, K. J. Groot, S. Hickel, M. Kotsonis · <em>AIAA</em> 2022-2330</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -503,7 +503,7 @@
         <span class="pub-year">2022</span>
         <div class="pub-content">
           <h4>Laminar-turbulent transition in supercritical forward-facing steps in crossflow</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>13th Workshop on Direct and Large-Eddy Simulation</em>, Udine, Italy</p>
+          <p><span style="">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>13th Workshop on Direct and Large-Eddy Simulation</em>, Udine, Italy</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -512,7 +512,7 @@
         <span class="pub-year">2022</span>
         <div class="pub-content">
           <h4>The reverse lift-up effect in crossflow instabilities over surface irregularities</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>European Drag Reduction and Flow Control Meeting</em>, Paris, France</p>
+          <p><span style="">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>European Drag Reduction and Flow Control Meeting</em>, Paris, France</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -521,7 +521,7 @@
         <span class="pub-year">2022</span>
         <div class="pub-content">
           <h4>Mechanisms of interaction between a stationary crossflow instability and backward-facing steps</h4>
-          <p>O. Krochak, <span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>12th TSFP</em>, Osaka, Japan</p>
+          <p>O. Krochak, <span style="">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>12th TSFP</em>, Osaka, Japan</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -530,7 +530,7 @@
         <span class="pub-year">2022</span>
         <div class="pub-content">
           <h4>An efficient harmonic Navier-Stokes solver for non-linear stability problems in complex domains</h4>
-          <p>S. Westerbeek, <span style="color: #ffffff;">J. Casacuberta</span>, M. Kotsonis · <em>14th ERCOFTAC SIG 33 Workshop</em>, Cádiz, Spain</p>
+          <p>S. Westerbeek, <span style="">J. Casacuberta</span>, M. Kotsonis · <em>14th ERCOFTAC SIG 33 Workshop</em>, Cádiz, Spain</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -539,7 +539,7 @@
         <span class="pub-year">2021</span>
         <div class="pub-content">
           <h4>Mechanisms of interaction between stationary crossflow instabilities and forward-facing steps</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>AIAA</em> 2021-0854</p>
+          <p><span style="">J. Casacuberta</span>, S. Hickel, M. Kotsonis · <em>AIAA</em> 2021-0854</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -548,7 +548,7 @@
         <span class="pub-year">2020</span>
         <div class="pub-content">
           <h4>Transitional Flow Dynamics Behind a Micro-Ramp</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, K. J. Groot, Q. Ye, S. Hickel · <em>Flow Turb. Comb.</em> (2020)</p>
+          <p><span style="">J. Casacuberta</span>, K. J. Groot, Q. Ye, S. Hickel · <em>Flow Turb. Comb.</em> (2020)</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -557,7 +557,7 @@
         <span class="pub-year">2019</span>
         <div class="pub-content">
           <h4>Linear and Non-Linear Dynamics of a Micro-Ramp Wake</h4>
-          <p>K. J. Groot, <span style="color: #ffffff;">J. Casacuberta</span>, Q. Ye, S. Hickel · <em>Ercoftac Bulletin</em> 118, March 2019</p>
+          <p>K. J. Groot, <span style="">J. Casacuberta</span>, Q. Ye, S. Hickel · <em>Ercoftac Bulletin</em> 118, March 2019</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -566,7 +566,7 @@
         <span class="pub-year">2018</span>
         <div class="pub-content">
           <h4>Effectivity and Efficiency of Selective Frequency Damping for the Computation of Unstable Steady-State Solutions</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, K. J. Groot, H. J. Tol, S. Hickel · <em>J. Comput. Phys.</em> 375, 481–497</p>
+          <p><span style="">J. Casacuberta</span>, K. J. Groot, H. J. Tol, S. Hickel · <em>J. Comput. Phys.</em> 375, 481–497</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -575,7 +575,7 @@
         <span class="pub-year">2018</span>
         <div class="pub-content">
           <h4>Transitional flow dynamics behind a micro-ramp</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, K. J. Groot, Q. Ye, S. Hickel · <em>12th ERCOFTAC Symposium</em>, Montpellier, France</p>
+          <p><span style="">J. Casacuberta</span>, K. J. Groot, Q. Ye, S. Hickel · <em>12th ERCOFTAC Symposium</em>, Montpellier, France</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -584,7 +584,7 @@
         <span class="pub-year">2018</span>
         <div class="pub-content">
           <h4>Linear and non-linear dynamics of a micro-ramp wake</h4>
-          <p>K. J. Groot, <span style="color: #ffffff;">J. Casacuberta</span>, Q. Ye, S. Hickel · <em>13th ERCOFTAC SIG 33 Workshop</em>, Paraty, Brazil</p>
+          <p>K. J. Groot, <span style="">J. Casacuberta</span>, Q. Ye, S. Hickel · <em>13th ERCOFTAC SIG 33 Workshop</em>, Paraty, Brazil</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -593,7 +593,7 @@
         <span class="pub-year">2016</span>
         <div class="pub-content">
           <h4>Estimation of wall shear stress using 4D flow cardiovascular MRI and computational fluid dynamics</h4>
-          <p>E. Soudah, <span style="color: #ffffff;">J. Casacuberta</span> et al. · <em>J. Mech. Med. Biol.</em> 17, 1750046</p>
+          <p>E. Soudah, <span style="">J. Casacuberta</span> et al. · <em>J. Mech. Med. Biol.</em> 17, 1750046</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
@@ -602,7 +602,7 @@
         <span class="pub-year">2015</span>
         <div class="pub-content">
           <h4>Blood Flow Patterns in Thoracic Aorta using 4D Phase-Contrast MRI and CFD</h4>
-          <p><span style="color: #ffffff;">J. Casacuberta</span>, E. Soudah et al. · <em>ICCB 2015</em>, Barcelona, Spain</p>
+          <p><span style="">J. Casacuberta</span>, E. Soudah et al. · <em>ICCB 2015</em>, Barcelona, Spain</p>
         </div>
         <a href="#" class="pub-link">→</a>
       </div>
