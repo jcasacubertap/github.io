@@ -244,7 +244,7 @@
     /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 1.2rem 1.5rem; }
-    .nav-links { gap: 1rem; }
+    .nav-links { gap: 0.5rem 1rem; flex-wrap: wrap; justify-content: flex-end; }
     .nav-links a { font-size: 0.85rem; }
     .hero { grid-template-columns: 1fr; min-height: auto; }
     .hero-left { padding: 6rem 1.5rem 2rem; }
@@ -276,6 +276,7 @@
       <li><a href="#repository">Repository</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#news">News</a></li>
+      <li><a href="https://flowstate-engineering.com" target="_blank" rel="noopener" style="color: var(--accent);">Flowstate Engineering ↗</a></li>
     </ul>
   </nav>
 
@@ -309,6 +310,10 @@
     </div>
 
     <blockquote class="hero-motto" style="margin-top: 2rem; font-size: 1.8rem;">Making aviation greener through aerodynamics.</blockquote>
+
+    <p style="margin-top: 4rem; font-size: 1.35rem; letter-spacing: 0.12em; text-transform: uppercase;">
+      <a href="https://www.ercoftac.org/ercoftac_news/21th-da-vinci-competition-winners-2026/" target="_blank" style="color: var(--text); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 4px;">Winner of the 2026 ERCOFTAC Da Vinci Award</a>
+    </p>
 
     </div>
     <div class="hero-right">
@@ -619,6 +624,11 @@
 
   <!-- CURRENT NEWS ENTRIES -->
   <div style="display: flex; flex-direction: column; gap: 2rem;">
+
+    <div class="news-item">
+      <p class="news-date">October 2026</p>
+      <p class="news-text">Winner of the 2026 <a href="https://www.ercoftac.org/ercoftac_news/21th-da-vinci-competition-winners-2026/" target="_blank" style="color: var(--accent);">ERCOFTAC Da Vinci Award</a> for the best PhD thesis in theoretical and applied fluid mechanics, presented at the final in Athens.</p>
+    </div>
 
     <div class="news-item">
       <p class="news-date">August 2026</p>
